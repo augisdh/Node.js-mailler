@@ -12,7 +12,7 @@ app.get('/', async (req, res) => res.send('hello wolrd'));
 
 app.post('/email', (req, res) => {
 
-    const {number, number, msg, mailAddr} = req.body;
+    const {name, number, msg, mailAddr} = req.body;
 
     let email = process.env.email;
     let pass = process.env.password;
