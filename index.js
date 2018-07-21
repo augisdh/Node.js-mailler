@@ -2,17 +2,12 @@ const app = require('express')();
 const cors = require('cors');
 const NodeMailer = require('nodemailer');
 const bodyParser = require('body-parser');
-const {mailer} = require('./config');
-const axios = require('axios');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/', async (req, res) => {
-    console.log(await axios.get('http://google.com'));
-    res.send('hello wolrd')
-});
+app.get('/', async (req, res) => res.send('hello wolrd'));
 
 app.post('/email', (req, res) => {
 
@@ -23,8 +18,8 @@ app.post('/email', (req, res) => {
         secure: false,
         port: 25,
         auth: {
-            user: mailer.user,
-            pass: mailer.password
+            user: process.env.email,
+            pass: process.env.password
         },
         tls: {
             rejectUnauthorized: false
