@@ -15,7 +15,6 @@ app.post('/email', (req, res) => {
     const {emailTo, text} = req.body;
 
     const transporter = NodeMailer.createTransport({
-        service: "Gmail",
         secure: false,
         port: 25,
         auth: {
