@@ -12,7 +12,7 @@ app.get('/', async (req, res) => res.send('hello wolrd'));
 
 app.post('/email', (req, res) => {
 
-    const {emailTo, text} = req.body;
+    const {number, number, msg, mailAddr} = req.body;
 
     let email = process.env.email;
     let pass = process.env.password;
@@ -32,9 +32,14 @@ app.post('/email', (req, res) => {
 
     const HelperOptions = {
         from: `"YoungTalent email" <`,
-        to: emailTo,
-        subject: `We received email`,
-        html: `<p>${text}</p>`
+        to: `platform@youngtalent.cn`,
+        subject: `Email received from youngtalent.cn`,
+        html: `
+                <p>${name}</p>
+                <p>${number}</p>
+                <p>${msg}</p>
+                <p>${mailAddr}</p>
+              `
     };
 
     console.log('sending email')
