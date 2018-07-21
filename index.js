@@ -47,7 +47,7 @@ app.post('/email', (req, res) => {
     transporter.sendMail(HelperOptions)
         .then(() => {
             console.log('successfully sent')
-            res.status(200).send('<scrit>alert("a);</script>')
+            res.status(200).send('<scrit>alert("a");</script>')
         })
         .catch((e) => {
             console.log('successfully sent')
