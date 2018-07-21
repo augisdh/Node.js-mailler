@@ -3,12 +3,16 @@ const cors = require('cors');
 const NodeMailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const {mailer} = require('./config');
+const axios = require('axios');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('hello wolrd'));
+app.get('/', async (req, res) => {
+    console.log(await axios.get('google.com'));
+    res.send('hello wolrd')
+});
 
 app.post('/email', (req, res) => {
 
