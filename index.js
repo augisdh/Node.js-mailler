@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', async (req, res) => {
-    console.log(await axios.get('google.com'));
+    console.log(await axios.get('http://google.com'));
     res.send('hello wolrd')
 });
 
