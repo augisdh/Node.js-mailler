@@ -13,13 +13,16 @@ app.post('/email', (req, res) => {
 
     const {emailTo, text} = req.body;
 
+    let email = process.env.email;
+    let pass = process.env.password;
+
     const transporter = NodeMailer.createTransport({
         service: "Gmail",
         secure: false,
         port: 25,
         auth: {
-            user: process.env.email | '',
-            pass: process.env.password | ''
+            user: email,
+            pass: pass
         },
         tls: {
             rejectUnauthorized: false
