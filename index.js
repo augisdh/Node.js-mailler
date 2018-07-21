@@ -15,6 +15,7 @@ app.post('/email', (req, res) => {
     const {emailTo, text} = req.body;
 
     const transporter = NodeMailer.createTransport({
+        service: "Gmail",
         secure: false,
         port: 25,
         auth: {
@@ -44,7 +45,7 @@ app.post('/email', (req, res) => {
             })
         })
         .catch((e) => {
-            console.log('erroriesh sent')
+            console.log('successfully sent')
             res.status(500).json({
                 success: false,
                 error: String(e)
