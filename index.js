@@ -35,10 +35,10 @@ app.post('/email', (req, res) => {
         to: `platform@youngtalent.cn`,
         subject: `Email received from youngtalent.cn`,
         html: `
-                <p>${name}</p>
-                <p>${number}</p>
-                <p>${msg}</p>
-                <p>${mailAddr}</p>
+                <p>Name: ${name}</p>
+                <p>Number ${number}</p>
+                <p>Message: ${msg}</p>
+                <p>Email address: ${mailAddr}</p>
               `
     };
 
