@@ -17,7 +17,6 @@ app.post('/email', (req, res) => {
     const transporter = NodeMailer.createTransport({
         service: "Gmail",
         secure: false,
-        port: 300,
         auth: {
             user: mailer.user,
             pass: mailer.password
