@@ -18,8 +18,8 @@ app.post('/email', (req, res) => {
         secure: false,
         port: 25,
         auth: {
-            user: process.env.email,
-            pass: process.env.password
+            user: process.env.email | '',
+            pass: process.env.password | ''
         },
         tls: {
             rejectUnauthorized: false
