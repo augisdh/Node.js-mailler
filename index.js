@@ -47,76 +47,7 @@ app.post('/email', (req, res) => {
     transporter.sendMail(HelperOptions)
         .then(() => {
             console.log('successfully sent')
-            res.status(200).send("<style>
-                                    body {
-                                        margin: 0;
-                                        padding: 0;
-                                        font-family: 'PingFang HK', 'Hiragino Sans GB', '冬青黑体', 'Microsoft Yahei', '微软雅黑', 'STXihei', '华文细黑', 'SimHei', '黑体', 'Hei Ti', 'Helvetica neue', Helvetica, sans-serif;
-                                    }
-                                    .form-page {
-                                        position: fixed;
-                                        width: 100vw;
-                                        height: 100vh;
-                                        background: #93c406;
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                    }
-                                    .form-modal {
-                                        padding: 20px;
-                                        width: 80%;
-                                        height: 80%;
-                                        background: #93c406;
-                                        display:flex;
-                                        justify-content:center;
-                                        align-items:center;
-                                        flex-direction:column;
-                                    }
-                                    .form-modal-text {
-                                        color:#fff;
-                                        margin-bottom:50px;
-                                    }
-                                    @media(max-width: 1350px){
-                                        .form-modal-text {
-                                            text-align: center;
-                                        }
-                                        span {
-                                            display:block;
-                                        }
-                                    }
-                                    @media(max-width: 700px){
-                                        .form-modal-text {
-                                            font-size: 18px;
-                                        }
-                                        img {
-                                            width: 150px;
-                                        }
-                                    }
-                                    @media(max-width: 390px){
-                                        .form-modal-text {
-                                            font-size: 16px;
-                                        }
-                                        img {
-                                            width: 125px;
-                                        }
-                                    }
-                                  </style>".
-                            "<div class='form-page'>
-                                    <div class='form-modal'>
-                                        <h1 class='form-modal-text'>您的预约申请已提交成功。
-                                            <span>我们的专业老师会尽快与您取得联系。</span>
-                                                谢谢！</h1>
-                                        <img src='../images/header/logo-young-talent-white.png' alt='young talent logo' width='200px'>
-                                    </div>
-                                </div>".
-                                "<script>
-                                    function changeLocation(){
-                                        setTimeout(function(){
-                                            window.location.replace('http://youngtalent.cn/');
-                                        }, 5000);   
-                                    }
-                                    changeLocation();
-                                </script>";)
+            res.status(200).send('<scrit>alert("a);</script>')
         })
         .catch((e) => {
             console.log('successfully sent')
