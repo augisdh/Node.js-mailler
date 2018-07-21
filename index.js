@@ -34,15 +34,23 @@ app.post('/email', (req, res) => {
         html: `<p>${text}</p>`
     };
 
+    console.log('sending email')
+
     transporter.sendMail(HelperOptions)
-        .then(() => res.status(200).json({
-            success: true,
-            data: 'Email sent'
-        }))
-        .catch((e) => res.status(500).json({
-            success: false,
-            error: String(e)
-        }));
+        .then(() => {
+            console.log('successfully sent')
+            res.status(200).json({
+                success: true,
+                data: 'Email sent'
+            })
+        })
+        .catch((e) => {
+            console.log('erroriesh sent')
+            res.status(500).json({
+                success: false,
+                error: String(e)
+            })
+        });
 
 
 
