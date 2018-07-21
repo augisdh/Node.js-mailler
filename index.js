@@ -2,6 +2,7 @@ const app = require('express')();
 const cors = require('cors');
 const NodeMailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const http = require('http');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -59,4 +60,9 @@ app.post('/email', (req, res) => {
 
 });
 
-app.listen(process.env.PORT | 3000, () => console.log(`Example app listening on port ${process.env.PORT | 3000}!`));
+const PORT = process.env.PORT  || 3000;
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
+    console.log(`<<<<Server is running on port: ${PORT}`)
+})
