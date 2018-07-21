@@ -47,21 +47,21 @@ app.post('/email', (req, res) => {
     transporter.sendMail(HelperOptions)
         .then(() => {
             console.log('successfully sent')
-//             res.status(200).json({
-//                 success: true,
-//                 data: 'Email sent'
-//             })
+            res.status(200).json({
+                success: true,
+                data: 'Email sent'
+            })
         
-            window.location.replace('http://youngtalent.cn/form/success.html');
+            (res.status(200)) ? window.location.replace('http://youngtalent.cn/form/success.html') : console.log('something wrong');
         })
         .catch((e) => {
             console.log('successfully sent')
-//             res.status(500).json({
-//                 success: false,
-//                 error: String(e)
-//             })
+            res.status(500).json({
+                success: false,
+                error: String(e)
+            })
         
-            window.location.replace('http://youngtalent.cn/form/failed.html');
+            (res.status(500)) ? window.location.replace('http://youngtalent.cn/form/failed.html') : console.log('something wrong');
         });
 });
 
