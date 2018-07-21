@@ -51,12 +51,7 @@ app.post('/email', (req, res) => {
         })
         .catch((e) => {
             console.log('successfully sent')
-            res.status(500).json({
-                success: false,
-                error: String(e)
-            })
-        
-//             (res.status(500)) ? window.location.replace('http://youngtalent.cn/form/failed.html') : console.log('something wrong');
+            res.status(500).redirect('http://youngtalent.cn/form/failed.html')
         });
 });
 
