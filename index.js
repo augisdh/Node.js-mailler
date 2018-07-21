@@ -47,13 +47,13 @@ app.post('/email', (req, res) => {
     transporter.sendMail(HelperOptions)
         .then(() => {
             console.log('successfully sent')
-            res.status(200)({
+            res.status(200)() => ({
                 window.location.replace('http://youngtalent.cn/form/success.html');
             })
         })
         .catch((e) => {
             console.log('successfully sent')
-            res.status(500)({
+            res.status(500)() => ({
                 window.location.replace('http://youngtalent.cn/form/failed.html');
             })
         });
