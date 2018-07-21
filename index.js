@@ -36,7 +36,7 @@ app.post('/email', (req, res) => {
         subject: `Email received from youngtalent.cn`,
         html: `
                 <p>Name: ${name}</p>
-                <p>Number ${number}</p>
+                <p>Number: ${number}</p>
                 <p>Message: ${msg}</p>
                 <p>Email address: ${mailAddr}</p>
               `
