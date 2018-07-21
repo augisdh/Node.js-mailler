@@ -47,7 +47,7 @@ app.post('/email', (req, res) => {
     transporter.sendMail(HelperOptions)
         .then(() => {
             console.log('successfully sent')
-            res.status(200).send({ com: "success" })
+            res.status(200).send('<p>sucess</p>')
         
 //             (res.status(200)) ? window.location.replace('http://youngtalent.cn/form/success.html') : console.log('something wrong');
         })
