@@ -62,7 +62,7 @@ app.post('/email', (req, res) => {
         });
 });
 
-const PORT = process.env.PORT  || 3000;
+const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
