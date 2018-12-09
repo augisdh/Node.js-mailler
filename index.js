@@ -47,17 +47,11 @@ app.post('/email', (req, res) => {
     transporter.sendMail(HelperOptions)
         .then(() => {
             console.log('successfully sent')
-            res.status(200).json({
-                success: true,
-                data: 'Email sent'
-            })
+            res.status(200).redirect('http://youngtalent.cn/form/success.html')
         })
         .catch((e) => {
             console.log('successfully sent')
-            res.status(500).json({
-                success: false,
-                error: String(e)
-            })
+            res.status(500).redirect('http://youngtalent.cn/form/failed.html')
         });
 });
 
