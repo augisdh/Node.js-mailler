@@ -12,7 +12,7 @@ app.get('/', async (req, res) => res.send('hello wolrd'));
 
 app.post('/email', (req, res) => {
 
-    const {name, number, wechat, email, msg} = req.body;
+    const {name, number, wechat, maillAddr, msg} = req.body;
 
     let email = process.env.email;
     let pass = process.env.password;
@@ -38,7 +38,7 @@ app.post('/email', (req, res) => {
                 <p>Name: ${name}</p>
                 <p>Number: ${number}</p>
                 <p>Wechat: ${wechat}</p>
-                <p>Email address: ${email}</p>
+                <p>Email address: ${maillAddr}</p>
                 <p>Message: ${msg}</p>
               `
     };
